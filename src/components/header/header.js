@@ -3,29 +3,29 @@ import { HomeContext } from "../../store/home-context.component"
 import styled from "styled-components"
 import sanityClient from "../../Client"
 import imageUrlBuilder from "@sanity/image-url"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const { home } = useContext(HomeContext)
   return (
-      <OuterMain>
-        <HeaderImage
-          alt="hero image"
-          className="heroimage"
-          id="heroimage"
-          style={{ backgroundImage: `url(${urlFor(home.heroImage).url()})` }}
-        />
-          <ColorShade />
-          <MainInner>
-            <MiddleText>
-              <MiddlePart2>{home.title}</MiddlePart2>
-              <MiddlePart>{home.description}</MiddlePart>
-            </MiddleText>
-            <MiddlePart>
-              <Link to='/kontakt' style={{textDecoration: 'none'}}><Button>Kontakta oss!</Button></Link>
-            </MiddlePart>
-          </MainInner>
-      </OuterMain>
+    <OuterMain>
+      <HeaderImage
+        alt="hero image"
+        className="heroimage"
+        id="heroimage"
+        style={{ backgroundImage: `url(${urlFor(home.heroImage).url()})` }}
+      />
+      <ColorShade />
+      <MainInner>
+        <MiddleText>
+          <MiddlePart2>{home.title}</MiddlePart2>
+          <MiddlePart>{home.description}</MiddlePart>
+        </MiddleText>
+        <MiddlePart>
+          <Link to='/kontakt' style={{ textDecoration: 'none' }}><Button>Kontakta oss!</Button></Link>
+        </MiddlePart>
+      </MainInner>
+    </OuterMain>
   )
 }
 
@@ -137,6 +137,7 @@ const MiddlePart = styled.div`
   width: 350px;
   margin-top: 15px;
   z-index: 999;
+  position: sticky;
 
 
   @media screen and (max-width: 500px) {
