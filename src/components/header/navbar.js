@@ -55,7 +55,7 @@ const Header = ({ scrollToTop }) => {
               : null}
           </NavLinks>
         </NavContainer>
-        {window.location.href == 'http://localhost:3000/kontakt' ?
+        {window.location.href === 'http://localhost:3000/kontakt' ?
           null :
           <MiddlePart>
             <Link to='/kontakt' onClick={scrollToTop} style={{ textDecoration: 'none' }}><Button>Kontakta oss!</Button></Link>
