@@ -8,7 +8,6 @@ import Begravning from './pages/begravning.component'
 import Buketter from './pages/buketter.component'
 import Kontakt from './pages/kontakt.component'
 import HomeContextProvider from './store/home-context.component'
-import ScrollToTop from './components/Misc/scroll-to-top.component'
 import BegravningContextProvider from './store/begravning.context'
 import KontaktContextProvider from './store/kontakt.context'
 import BuketterContextProvider from './store/buketter.context'
@@ -27,7 +26,7 @@ const App = () => (
 		<Route path={'/brollop'}>
 			<BrollopContextProvider>
 				<Brollop />
-			</BrollopContextProvider>	
+			</BrollopContextProvider>
 		</Route>
 		<Route path={'/begravning'}>
 			<BegravningContextProvider>
@@ -45,7 +44,6 @@ const App = () => (
 			</KontaktContextProvider>
 		</Route>
 		<Footer />
-		<ScrollToTop />
 	</ContCont>
 )
 export default App

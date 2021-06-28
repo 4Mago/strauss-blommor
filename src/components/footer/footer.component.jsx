@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import sanityClient from "../../Client"
 import imageUrlBuilder from "@sanity/image-url"
+import ScrollToTop from "../Misc/scrollToTop"
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -113,73 +114,73 @@ const Footer = () => {
 
           {footer.menu
             ? footer.menu.map((item, id) => (
-                <InfoLink to={item.link} key={id}>
-                  <svg
-                    width="10"
-                    height="14"
-                    viewBox="0 0 8 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 4C12.62672 12.79006 12.90954 12.75176 1 17"
-                      stroke="white"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+              <InfoLink to={item.link} key={id} onClick={ScrollToTop}>
+                <svg
+                  width="10"
+                  height="14"
+                  viewBox="0 0 8 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 4C12.62672 12.79006 12.90954 12.75176 1 17"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
 
-                  {item.name}
-                </InfoLink>
-              ))
+                {item.name}
+              </InfoLink>
+            ))
             : null}
         </InfoContainer>
         <InfoContainer>
           <InfoHeader>Hitta hit!</InfoHeader>
           {footer.companyLocation
             ? footer.companyLocation.map((item, id) => (
-                <MenuLink to={item.link} key={id}>
-                  {item.mail} <br />
-                  {item.postnr + " "}
-                  {item.stad}
-                </MenuLink>
-              ))
+              <MenuLink to={item.link} key={id}>
+                {item.mail} <br />
+                {item.postnr + " "}
+                {item.stad}
+              </MenuLink>
+            ))
             : null}
         </InfoContainer>
         <InfoContainer>
           <InfoHeader>Vardagar</InfoHeader>
           {footer.companyOpenhours
             ? footer.companyOpenhours.map((item, id) => (
-                <MenuLinkOpenhours to={item.link} key={id}>
-                  {item.vardagar}
-                </MenuLinkOpenhours>
-              ))
+              <MenuLinkOpenhours to={item.link} key={id}>
+                {item.vardagar}
+              </MenuLinkOpenhours>
+            ))
             : null}
           <InfoHeader>Helger</InfoHeader>
           {footer.companyOpenhours
             ? footer.companyOpenhours.map((item, id) => (
-                <MenuLinkOpenhours to={item.link} key={id}>
-                  {item.helger}
-                </MenuLinkOpenhours>
-              ))
+              <MenuLinkOpenhours to={item.link} key={id}>
+                {item.helger}
+              </MenuLinkOpenhours>
+            ))
             : null}
         </InfoContainer>
         <InfoContainer>
           <InfoHeader>Hälsa på!</InfoHeader>
           Vi har öppet under jul och nyår! <br /> Lägg en beställning på:
-          <a href="tel:0707972446">08-20 98 40</a>
+          <A href="tel:0707972446">08-20 98 40</A>
           <InfoText>
             <InfoHeader>Socials</InfoHeader>
             {footer.socialMedia
               ? footer.socialMedia.map((item, id) => (
-                  <Image
-                    to={item.link}
-                    key={id}
-                    id="image"
-                    alt="client Image"
-                    src={urlFor(item.icon).url()}
-                  />
-                ))
+                <Image
+                  to={item.link}
+                  key={id}
+                  id="image"
+                  alt="client Image"
+                  src={urlFor(item.icon).url()}
+                />
+              ))
               : null}
           </InfoText>
         </InfoContainer>
@@ -190,3 +191,8 @@ const Footer = () => {
 }
 
 export default Footer
+
+const A = styled.a`
+    text-decoration: none;
+    color: #E9CB58;
+`

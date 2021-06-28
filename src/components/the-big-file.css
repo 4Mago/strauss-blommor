@@ -75,7 +75,36 @@
 }
 
 /****************************************************           ~            INDEX.js -> GREETING CONTAINER            ~                ****************************************************/
-
+.wrap {
+  padding:0px 0;
+  position:absolute;
+  width: 300px;
+  height: 300px;
+  left:37%;top:0;
+}
+.button1 {
+width:100px;
+margin:10px auto;
+padding:0 0 2px 0;
+font-variant:small-caps;
+text-transform:lowercase;
+text-align:center;
+outline:#000 solid thin;
+border-right:1px solid #000;
+border-bottom:1px solid #000;
+text-shadow:#ccc 1px 1px 1px;
+cursor:default;
+}
+.button1:hover {
+color:#f00;
+}
+.button1:active {
+color:#fff;
+border-left:1px solid #000;
+border-top:1px solid #000;
+border-right:0px solid #000;
+border-bottom:0px solid #000;
+}
 /****************************************************           ~            INDEX.js -> picture-preview             ~              ****************************************************/
 
 .picture-preview {

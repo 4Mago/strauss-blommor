@@ -63,7 +63,7 @@ const A = styled.a`
 `
 
 
-const SliderBilder = () => {
+const SliderBilder2 = () => {
     const [sliderBilder, setSliderBilder] = useState('')
     useEffect(() => {
         const sliderBilderQuery = `*[_type == "sliderbilder"]`
@@ -90,7 +90,7 @@ const SliderBilder = () => {
                     step={1}
                 >
                     <SliderCont style={{ height: '800px' }}>
-                        <H1 style={{ paddingLeft: '43%' }}>Bli inspirerad</H1>
+                        <H1>Bli inspirerad</H1>
                         <Slider style={{ height: '600px' }}>
                             {sliderBilder.length > 0 ?
                                 sliderBilder.map((item, index) => {
@@ -116,4 +116,4 @@ const SliderBilder = () => {
     )
 }
 
-export default SliderBilder
+export default SliderBilder2

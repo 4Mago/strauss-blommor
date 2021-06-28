@@ -13,13 +13,13 @@ function urlFor(source) {
 }
 
 const HomeCarousel = styled(Carousel)`
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   font-size: 40px;
 .slide iframe {
     margin: 0 !important;
     width: 100% !important;
-    min-height: 100vh;
+    min-height: 90vh;
   }
   .carousel-slider .control-arrow {
     padding: 20px !important;
@@ -91,20 +91,20 @@ overflow-x: hidden;
 
 const Brollop = () => {
   const [brollop, setBrollop] = useState("")
-  
-  useEffect(() => {
-      const brollopQuery = `*[_type == "brollop"]`
-      sanityClient.fetch(brollopQuery).then((brollop) => {
-        const brollopArray = []
-        brollop.forEach((brollop) => {
-          brollopArray.push(brollop)
-        })
-        setBrollop(brollopArray)
-      })
-      return
-    }, [])
 
-const settings = {
+  useEffect(() => {
+    const brollopQuery = `*[_type == "brollop"]`
+    sanityClient.fetch(brollopQuery).then((brollop) => {
+      const brollopArray = []
+      brollop.forEach((brollop) => {
+        brollopArray.push(brollop)
+      })
+      setBrollop(brollopArray)
+    })
+    return
+  }, [])
+
+  const settings = {
     autoPlay: true,
     showArrows: true,
     showThumbs: true,
@@ -117,29 +117,30 @@ const settings = {
 
   return (
     <>
-    <ContCont>
-    <HomeContainer id="Home">
-    {brollop.length > 0 ? (
-        <HomeCarousel {...settings}>
-          {brollop.map((brollopItem, idx) => {
-            return(
-                <>
-            <HeaderImage>
-              <Thumbnail 
-                style={{ backgroundImage: `url(${urlFor(brollopItem.heroImage).quality(80).auto('format').url()})` }}
-                key={idx}
-                slider={brollopItem}
-              />
-              <Title>{brollopItem.title}</Title>
-            </HeaderImage>
-            </>
-          )})}
-        </HomeCarousel>
-    )
-    : null }
-    </HomeContainer>
-    <BrollopCont />
-    </ContCont>
+      <ContCont>
+        <HomeContainer id="Home">
+          {brollop.length > 0 ? (
+            <HomeCarousel {...settings}>
+              {brollop.map((brollopItem, idx) => {
+                return (
+                  <>
+                    <HeaderImage>
+                      <Thumbnail
+                        style={{ backgroundImage: `url(${urlFor(brollopItem.heroImage).quality(80).auto('format').url()})` }}
+                        key={idx}
+                        slider={brollopItem}
+                      />
+                      <Title>{brollopItem.title}</Title>
+                    </HeaderImage>
+                  </>
+                )
+              })}
+            </HomeCarousel>
+          )
+            : null}
+        </HomeContainer>
+        <BrollopCont />
+      </ContCont>
     </>
   )
 }

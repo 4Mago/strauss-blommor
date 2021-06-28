@@ -3,7 +3,6 @@ import { HomeContext } from "../../store/home-context.component"
 import styled from "styled-components"
 import sanityClient from "../../Client"
 import imageUrlBuilder from "@sanity/image-url"
-import { Link } from 'react-router-dom'
 
 const Header = () => {
   const { home } = useContext(HomeContext)
@@ -21,9 +20,6 @@ const Header = () => {
           <MiddlePart2>{home.title}</MiddlePart2>
           <MiddlePart>{home.description}</MiddlePart>
         </MiddleText>
-        <MiddlePart>
-          <Link to='/kontakt' style={{ textDecoration: 'none' }}><Button>Kontakta oss!</Button></Link>
-        </MiddlePart>
       </MainInner>
     </OuterMain>
   )
@@ -42,7 +38,7 @@ const OuterMain = styled.div`
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 85.5vh;
   width: 100%;
   left: 0px;
   padding-top: 108px;
@@ -75,23 +71,6 @@ const HeaderImage = styled.div`
   }
 `
 
-const Button = styled.button`
-    font-weight: 100;
-    color: black;
-    font-size: 1rem;
-    width: 11.5rem;
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0 0 10%;
-    border-radius: 2rem;
-    background: #273430;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    padding: 1rem 0.5rem;
-    animation: animate 2s linear infinite;
-`
-
 const MainInner = styled.div`
   display: flex;
   align-items: center;
@@ -108,7 +87,6 @@ const MainInner = styled.div`
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
-  padding: 15%;  
   }
   @media screen and (max-width: 700px) {
     width: 100%;
@@ -136,8 +114,9 @@ const MiddlePart = styled.div`
   font-size: 18px;
   width: 350px;
   margin-top: 15px;
-  z-index: 999;
   position: sticky;
+  top:0;
+  right: 0;
 
 
   @media screen and (max-width: 500px) {
@@ -180,8 +159,8 @@ const MiddleText = styled.div`
 
 
   @media screen and (max-width: 900px) {
-    width: 100%;
-    margin-left: 12%;
+    width: 70%;
+    margin-left: 8%;
   }
   @media screen and (max-width: 500px) {
     width: 90%;

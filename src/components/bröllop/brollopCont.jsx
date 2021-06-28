@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "../../Client"
@@ -10,39 +10,39 @@ function urlFor(source) {
 }
 
 const BrollopCont = () => {
-    const { brollop } = useContext(BrollopContext)
+  const { brollop } = useContext(BrollopContext)
 
-    return (
+  return (
 
-        <Container>
-        <Header>{brollop.title}</Header>
-        <SegmentContainer>
-          <Segment>
-            <Photo
-              alt="hero image"
-              className="heroimage"
-              id="heroimage"
-              src={urlFor(brollop.image).url()}
-            />
-            <TextCont>
-              <Text>{brollop.description}</Text>
-            </TextCont>
-          </Segment>
-          <Segment>
-            <TextCont>
-              <Text>{brollop.description2}</Text>
-            </TextCont>
+    <Container>
+      <Header>{brollop.title}</Header>
+      <SegmentContainer>
+        <Segment>
+          <Photo
+            alt="hero image"
+            className="heroimage"
+            id="heroimage"
+            src={urlFor(brollop.image).url()}
+          />
+          <TextCont>
+            <Text>{brollop.description}</Text>
+          </TextCont>
+        </Segment>
+        <Segment>
+          <TextCont>
+            <Text>{brollop.description2}</Text>
+          </TextCont>
 
-            <Photo
-              alt="hero image"
-              className="heroimage"
-              id="heroimage"
-              src={urlFor(brollop.image2).url()}
-            />
-          </Segment>
-        </SegmentContainer>
-      </Container>        
-)
+          <Photo
+            alt="hero image"
+            className="heroimage"
+            id="heroimage"
+            src={urlFor(brollop.image2).url()}
+          />
+        </Segment>
+      </SegmentContainer>
+    </Container>
+  )
 }
 
 export default BrollopCont
@@ -52,9 +52,9 @@ const Container = styled.div`
   height: 100%;
   box-sizing: border-box;
   padding: 0 5%;
-  color: #4a1f1f;
+  color: #fff;
   font-family: poppins;
-  padding-top: 35px;
+  padding-top: 135px;
 
 
   h1 {

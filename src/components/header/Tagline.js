@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const TaglineDiv = styled.div`
   width: 100%;
-  height: 400px;
+  height: 600px;
   display: flex;
   flex-flow: column;
   gap: 22px;
@@ -12,15 +12,18 @@ const TaglineDiv = styled.div`
   align-items: center;
   text-align: center;
   background-color: #273421;
+  position: relative;
 `
 
 const TaglineTitle = styled.h2`
   color: white;
+  z-index: 9999;
 `
 
 const TaglineText = styled.p`
   color: white;
   width: 550px;
+  z-index: 9999;
 
   @media screen and (max-width: 550px) {
     width: 100%;
