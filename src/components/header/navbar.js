@@ -54,12 +54,8 @@ const Header = ({ scrollToTop }) => {
               })
               : null}
           </NavLinks>
+          <Link to='/kontakt' onClick={scrollToTop} style={{ textDecoration: 'none' }}><Button>Kontakta oss!</Button></Link>
         </NavContainer>
-        {window.location.href === 'http://localhost:3000/kontakt' ?
-          null :
-          <MiddlePart>
-            <Link to='/kontakt' onClick={scrollToTop} style={{ textDecoration: 'none' }}><Button>Kontakta oss!</Button></Link>
-          </MiddlePart>}
       </HeaderContainer>
     </ContCont>
   )
@@ -76,9 +72,10 @@ function urlFor(source) {
 const Button = styled.button`
 font-weight: 100;
 color: black;
-font-size: 1rem;
-padding: 1rem 0.5rem;
-width: 11.5rem;
+font-size: 0.8rem;
+padding: 0.8rem 0.2rem;
+width: 10rem;
+margin: 10px;
 display: flex;
 justify-content: center;
 border-radius: 2rem;
@@ -86,16 +83,13 @@ background: #273430;
 outline: none;
 color: white;
 cursor: pointer;
-transform: translate(-120%, 700%);
+position: absolute;
+top: 81.5vh;
+right: -200px;
 
-@media screen and (max-width: 1000px) {
-  transform: translate(-80%, 700%);
-  }
-  
+@media screen and (max-width: 1000px) {}  
 
-@media screen and (max-height: 500px) {
-  transform: translate(-120%, 650%);
-  }
+@media screen and (max-height: 500px) {}
 `
 
 const ImgContainer = styled.div`
@@ -138,110 +132,23 @@ const MiddlePart = styled.div`
   position: sticky;
   top:-39%;
   left: 90vw;
-  @media screen and (max-width: 500px) {
-    width: 1px;
-  }
-  @media screen and (max-width: 500px) {
-    width: 100%;
-  }
-  @media screen and (max-height: 900px) {
-    top:-45%;
-  }
-  @media screen and (max-height: 850px) {
-    top:-48%;
-  }
-  @media screen and (max-height: 800px) {
-    top:-50%;
-  }
-  @media screen and (max-height: 750px) {
-    top:-53%;
-  }
-  @media screen and (max-height: 700px) {
-    top:-57%;
-  }
-  @media screen and (max-height: 650px) {
-    top:-58%;
-  }
-  @media screen and (max-height: 600px) {
-    top:-68%;
-  }
-  @media screen and (max-height: 575px) {
-    top:-70%;
-  }
-  @media screen and (max-height: 550px) {
-    top:-72.5%;
-  }
-  @media screen and (max-height: 525px) {
-    top:-77%;
-  }
-  @media screen and (max-height: 500px) {
-    top:-82%;
-  }
-  @media screen and (max-height: 475px) {
-    top:-86%;
-  }
-  @media screen and (max-height: 450px) {
-    top:-88%;
-  }
-  @media screen and (max-height: 435px) {
-    top:-95%;
-  }
-  @media screen and (max-height: 425px) {
-    top:-100%;
-  }
 `
 
 
 const NavContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-decoration: none;
   color: white;
   position: sticky;
-  top: -78%;
+  top: -75%;
   left: 35%;
   transform: translate(-26%, -93%);
   z-index: 999;
-  height: 60px;
+  height: 50px;
   width: 98%;
-
-
-  @media screen and (max-width: 1100px) {
   
-  }
-
-  @media screen and (max-width: 500px) {
-  }
-  @media screen and (max-height: 900px) {
-    
-  }
-  @media screen and (max-height: 850px) {
-  }
-  @media screen and (max-height: 800px) {
-    
-  }
-  @media screen and (max-height: 750px) {
-
-  }
-  @media screen and (max-height: 700px) {
-  }
-  @media screen and (max-height: 650px) {
-    top: -64.7%;
-  }
-  @media screen and (max-height: 600px) {
-    top: -63.7%;
-  }
-  @media screen and (max-height: 550px) {
-    top: -62.7%;
-    
-  }
-  @media screen and (max-height: 500px) {
-    top: -60.7%;
-  }
-  @media screen and (max-height: 450px) {
-    top: -58.7%;
-  }
 `
 const HeaderContainer = styled.div`
   position: relative;
@@ -271,7 +178,6 @@ const NavLinks = styled.div`
 
   @media screen and (max-width: 1100px) {
     padding-left: 35%;
-
   }
   @media screen and (max-height: 900px) {
   }
@@ -296,4 +202,9 @@ const NavLinks = styled.div`
     padding-left: 0;
 
   }
+
+  a {
+    padding-bottom: 55px;
+  }
 `
+
