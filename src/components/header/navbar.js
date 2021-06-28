@@ -125,16 +125,6 @@ const ContCont = styled.div`
   left: 0;
 `
 
-const MiddlePart = styled.div`
-  color: white;
-  width: 250px;
-  z-index: 999;
-  position: sticky;
-  top:-39%;
-  left: 90vw;
-`
-
-
 const NavContainer = styled.div`
   display: flex;
   justify-content: space-around;
